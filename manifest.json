@@ -1,9 +1,9 @@
 {
-  "name": "Rotasi Kerja 12 Orang",
-  "short_name": "Rotasi Kerja",
+  "name": "Koordinator Shooting",
+  "short_name": "Koordinator",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#f1f5f9",
+  "background_color": "#eef2f7",
   "theme_color": "#0f172a",
-  "description": "Jadwal rotasi 12 orang: A, B, C dan Libur."
+  "description": "Jadwal 12 orang, shooting, standby dan backup."
 }
