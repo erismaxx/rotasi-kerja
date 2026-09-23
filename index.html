@@ -1,34 +1,55 @@
 <!doctype html>
 <html lang="id">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#0f172a"><link rel="manifest" href="manifest.json">
-<link rel="stylesheet" href="style.css"><title>Koordinator Shooting</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0f172a">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="style.css">
+<title>Koordinator Shooting</title>
 </head>
-<body><main class="app">
-<header><div><div class="eyebrow">KOORDINATOR SHOOTING</div><h1>Jadwal Kerja</h1><p class="sub">12 orang · 3 titik · kerja & standby</p></div></header>
+<body>
+<main class="app">
+<header>
+  <div class="eyebrow">KOORDINATOR SHOOTING</div>
+  <h1>Jadwal Kerja</h1>
+  <p class="sub">12 orang · 3 titik · kerja & standby</p>
+</header>
 
 <section class="card">
-<h2>Anggota</h2><p class="hint">3 orang libur mengikuti rotasi 4 minggu. Nama bisa diubah kapan saja.</p>
-<div id="names"></div><button class="primary" id="saveNames">Simpan Nama</button>
+  <h2>Anggota</h2>
+  <p class="hint">Masukkan 12 nama. Nama tersimpan di HP.</p>
+  <div id="names"></div>
+  <button class="primary" id="saveNames">Simpan Nama</button>
 </section>
 
 <section class="card">
-<h2>Siklus Titik & Libur</h2>
-<div class="date-row"><label>Tanggal awal Minggu 1<input id="startDate" type="date"></label></div>
-<div class="mini">Minggu 1 → 2 → 3 → 4: A → B → C → Libur</div>
-<div id="weekGroups"></div>
+  <h2>Siklus Titik & Libur</h2>
+  <label class="label">Tanggal awal Minggu 1
+    <input id="startDate" type="date">
+  </label>
+  <div class="mini">Minggu 1 → 2 → 3 → 4: A → B → C → Libur</div>
+  <div id="weekGroups" class="week-groups"></div>
 </section>
 
 <section class="card">
-<div class="section-head"><div><h2>Jadwal Shooting</h2><p class="hint">Target normal: 4 hari kerja + 3 hari standby per orang aktif.</p></div></div>
-<div class="week-nav"><button class="secondary" id="prev">‹</button><strong id="weekTitle"></strong><button class="secondary" id="next">›</button></div>
-<div id="days"></div>
+  <h2>Jadwal Shooting</h2>
+  <p class="hint">A = 6 hari, B = 5 hari, C = 7 hari. Target aktif: tepat 4 hari kerja per orang.</p>
+  <div class="week-nav">
+    <button class="secondary" id="prev">‹</button>
+    <strong id="weekTitle">Minggu 1</strong>
+    <button class="secondary" id="next">›</button>
+  </div>
+  <div id="summary"></div>
+  <div id="days"></div>
 </section>
 
 <section class="card">
-<h2>Penggantian / Backup</h2>
-<p class="hint">Pilih hari untuk melihat siapa yang standby. Jika ada orang berhalangan, pilih pengganti dan catat sebagai backup.</p>
-<div id="backup"></div>
+  <h2>Backup / Penggantian</h2>
+  <p class="hint">Orang standby tetap bisa dipanggil bila ada yang berhalangan.</p>
+  <div id="backup"></div>
 </section>
-</main><script src="app.js"></script></body></html>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
