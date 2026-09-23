@@ -6,7 +6,7 @@ h1{font-size:27px;margin:3px 0}.sub,.hint{margin:0;color:#64748b;font-size:13px}
 .card{background:#fff;border-radius:18px;padding:17px;margin:11px 0;box-shadow:0 3px 15px #0f172a10}
 h2{font-size:18px;margin:0 0 5px}.label{display:block;font-size:13px;font-weight:700;color:#475569}
 input,select{width:100%;padding:11px;border:1px solid #cbd5e1;border-radius:11px;background:#fff;font-size:15px}
-.label input{margin-top:6px}#names{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:13px 0}
+.label input{margin-top:6px}#names{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:13px 0}.name-field{display:block}.name-field span{display:block;font-size:11px;color:#64748b;margin:0 0 4px 2px}.name-field input{min-height:46px;-webkit-user-select:text;user-select:text;pointer-events:auto;cursor:text}.save-status{min-height:20px;text-align:center;color:#166534;font-size:12px;margin-top:7px}
 button{border:0;border-radius:11px;padding:11px 14px;font-size:14px;font-weight:750}
 .primary{background:#0f172a;color:white;width:100%}.secondary{background:#e2e8f0}
 .mini{margin:12px 0;padding:10px;border-radius:11px;background:#f8fafc;color:#475569;font-size:13px}

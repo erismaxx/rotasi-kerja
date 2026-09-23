@@ -4,11 +4,20 @@ let start=localStorage.getItem(DKEY)||"2026-09-23", week=0, current=null;
 const $=id=>document.getElementById(id);
 function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
 function renderNames(){
-  $("names").innerHTML=names.map((n,i)=>`<input data-i="${i}" value="${esc(n)}" placeholder="Orang ${i+1}">`).join("");
+  $("names").innerHTML=names.map((n,i)=>`<label class="name-field"><span>Orang ${i+1}</span><input type="text" data-i="${i}" value="${esc(n)}" placeholder="Nama orang ${i+1}" autocomplete="off" autocapitalize="words" spellcheck="false"></label>`).join("");
+  document.querySelectorAll("#names input").forEach((input)=>{
+    input.addEventListener("input",()=>{
+      const i=Number(input.dataset.i);
+      names[i]=input.value;
+      localStorage.setItem(NKEY,JSON.stringify(names));
+    });
+  });
 }
 function saveNames(){
   names=[...document.querySelectorAll("#names input")].map((x,i)=>x.value.trim()||`Orang ${i+1}`);
-  localStorage.setItem(NKEY,JSON.stringify(names)); renderAll(); alert("Nama berhasil disimpan.");
+  localStorage.setItem(NKEY,JSON.stringify(names));
+  renderAll();
+  $("saveStatus").textContent="Nama tersimpan.";
 }
 function dateAt(w,d=0){let x=new Date(start+"T00:00:00");x.setDate(x.getDate()+w*7+d);return x}
 function fmt(x){return x.toLocaleDateString("id-ID",{day:"2-digit",month:"short"})}
@@ -82,4 +91,4 @@ $("startDate").value=start;
 $("startDate").onchange=e=>{start=e.target.value;localStorage.setItem(DKEY,start);week=0;renderAll()};
 function renderAll(){renderNames();renderGroups();renderSchedule()}
 renderAll();
-if("serviceWorker"in navigator)navigator.serviceWorker.register("sw.js?v=3");
+if("serviceWorker"in navigator)navigator.serviceWorker.register("sw-v4.js");
